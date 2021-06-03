@@ -49,7 +49,11 @@ function gistFix(map) {
          if(this.id){
              this.id = this.id.querySelectorAll('tbody tr');
              this.id.forEach(function (e,i) {
-                 if( !(i>= this.min || i <= this.max)){
+
+                 if( i < this.min){
+                     e.remove();
+                 }
+                 if( i > this.max){
                      e.remove();
                  }
              })
