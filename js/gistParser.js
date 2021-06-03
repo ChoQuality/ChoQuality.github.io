@@ -16,16 +16,13 @@ function scriptParsing(){
     }
     return map;
 }
-function gistFix(map) {
+function gistFix(mapData) {
     this.mapObj = {id:false,min:{},max:{}}
-    this.id = false;
-    this.min=0;
-    this.max=0;
-    parseMap(map,this.mapObj);
+    parseMap(mapData,this.mapObj);
     fix(this.mapObj);
 
-    function parseMap(map,mapObj){
-        for (const [key, value] of map) {
+    function parseMap(mapData,mapObj){
+        for (const [key, value] of mapData) {
             switch (key) {
                 case "id":
                     mapObj.id = document.getElementById(value);
@@ -40,7 +37,7 @@ function gistFix(map) {
         }
 
         if(mapObj.id){
-            let trs = map.id.querySelectorAll('tbody tr');
+            let trs = mapObj.id.querySelectorAll('tbody tr');
             if( mapObj.max == 0  || mapObj.max > trs.length){
                 mapObj.max = trs.length;
             }
