@@ -20,17 +20,17 @@ function gistFix(map) {
     this.id = false;
     this.min=0
     this.max=0;
-    parseMap(map);
+    parseMap(map,this.min);
     fix();
 
-    function parseMap(map){
+    function parseMap(map,min){
         for (const [key, value] of map) {
             switch (key) {
                 case "id":
                     this.id = document.getElementById(value);
                     break;
                 case "min":
-                    this.min = value;
+                    min = value;
                     break;
                 case "max":
                     this.max = value;
