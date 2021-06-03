@@ -1,13 +1,9 @@
 
-var our = scriptQuery(); // 스크립트 주소에서 쿼리를 받아 저장
-alert(our.key); // 테스트
-
+let map  = scriptParsing();
 window.onload = function () {
-    var t = this;
-    const userInfo = JSON.parse(document.getElementById("data").text);
-    console.log("User information: %o", userInfo);
+    gistFix(map);
 };
-function scriptQuery(){
+function scriptParsing(){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
         .replace(/[^\?]+\?/,'')
@@ -20,3 +16,44 @@ function scriptQuery(){
     }
     return map;
 }
+function gistFix(map) {
+    this.id = false;
+    this.min=0
+    this.max=0;
+    parseMap(map,this.id, this.min, this.max);
+    fix(this.id, this.min, this.max);
+
+    function parseMap(map,id,min,max){
+        for (const [key, value] of map) {
+            switch (key) {
+                case "id":
+                    id = document.getElementById(value);
+                    break;
+                case "min":
+                    min = value;
+                    break;
+                case "max":
+                    max = value;
+                    break;
+            }
+        }
+
+        if(id){
+            let trs =id.querySelectorAll('tbody tr');
+            if( max == 0  || max > trs.length){
+                max = trs.length;
+            }
+        }
+    }
+    function fix(id, min, max){
+         if(id){
+             id = id.querySelectorAll('tbody tr');
+             id.forEach(function (e,i) {
+                 if( !(i>= min || i <= max)){
+                     e.remove();
+                 }
+             })
+         }
+    }
+}
+
