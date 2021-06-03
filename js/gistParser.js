@@ -43,6 +43,10 @@ function gistFix(map) {
             if( this.max == 0  || this.max > trs.length){
                 this.max = trs.length;
             }
+            if(this.min > this.max){
+                this.min=this.max;
+            }
+            min =10;
         }
     }
     function fix(){
