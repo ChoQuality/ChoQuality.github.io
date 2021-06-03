@@ -1,7 +1,7 @@
 
-let map  = scriptParsing();
+let mapData  = scriptParsing();
 window.onload = function () {
-    gistFix(map);
+    gistFix(mapData);
 };
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
