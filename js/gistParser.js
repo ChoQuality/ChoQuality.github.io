@@ -44,9 +44,8 @@ function gistFix(map) {
                 max = trs.length;
             }
             if(min > max){
-                min=max;
+                min = max;
             }
-            min =10;
         }
     }
     function fix(id,min,max){
