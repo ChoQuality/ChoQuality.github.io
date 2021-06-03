@@ -17,43 +17,43 @@ function scriptParsing(){
     return map;
 }
 function gistFix(map) {
-    this.map = {id:false,min:{},max:{}}
+    this.mapObj = {id:false,min:{},max:{}}
     this.id = false;
     this.min=0;
     this.max=0;
-    parseMap(map,this.map);
-    fix(this.map);
+    parseMap(map,this.mapObj);
+    fix(this.mapObj);
 
-    function parseMap(map,map){
+    function parseMap(map,mapObj){
         for (const [key, value] of map) {
             switch (key) {
                 case "id":
-                    map.id = document.getElementById(value);
+                    mapObj.id = document.getElementById(value);
                     break;
                 case "min":
-                    map.min = value;
+                    mapObj.min = value;
                     break;
                 case "max":
-                    map.max = value;
+                    mapObj.max = value;
                     break;
             }
         }
 
-        if(map.id){
+        if(mapObj.id){
             let trs = map.id.querySelectorAll('tbody tr');
-            if( map.max == 0  || map.max > trs.length){
-                map.max = trs.length;
+            if( mapObj.max == 0  || mapObj.max > trs.length){
+                mapObj.max = trs.length;
             }
-            if(map.min > map.max){
-                map.min =map.max;
+            if(mapObj.min > mapObj.max){
+                mapObj.min =mapObj.max;
             }
         }
     }
-    function fix(map){
-         if(map.id){
-             map.id = map.id.querySelectorAll('tbody tr');
-             map.id.forEach(function (e,i) {
-                 if( i < parseInt(map.min) ||  i > parseInt(map.max)){
+    function fix(mapObj){
+         if(mapObj.id){
+             mapObj.id = mapObj.id.querySelectorAll('tbody tr');
+             mapObj.id.forEach(function (e,i) {
+                 if( i < parseInt(mapObj.min) ||  i > parseInt(mapObj.max)){
                      e.remove();
                  }
              })
