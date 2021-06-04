@@ -41,7 +41,7 @@ function convertSectionName(mapData) {
         if(mapObj.section){
             var h1 =document.createElement("h1");
             h1.innerText = mapObj.section;
-            document.querySelector('main ul').append(h1);
+            document.querySelector('main ul').prepend(h1);
         }
     }
 
