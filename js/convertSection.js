@@ -1,8 +1,8 @@
 
 let mapData  = scriptParsing();
-window.onload = function () {
-    gistFix(mapData);
-};
+window.addEventListener('DOMContentLoaded', function(){
+    convertSectionName(mapData);
+});
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
@@ -16,45 +16,34 @@ function scriptParsing(){
     }
     return map;
 }
-function gistFix(mapData) {
-    this.mapObj = {id:false,min:{},max:{}}
+function convertSectionName(mapData) {
+    this.mapObj = {section:false}
     parseMap(mapData,this.mapObj);
-    fix(this.mapObj);
 
     function parseMap(mapData,mapObj){
         for (const [key, value] of mapData) {
-            switch (key) {
-                case "id":
-                    mapObj.id = document.getElementById(value);
+            switch (value) {
+                case "about":
+                    mapObj.section = "생각?";
                     break;
-                case "min":
-                    mapObj.min = value;
+                case "posts":
+                    mapObj.section = "정리?";
                     break;
-                case "max":
-                    mapObj.max = value;
+                case "sites":
+                    mapObj.section = "참고?";
+                    break;
+                case "undefined":
+                    mapObj.section = "미정?";
                     break;
             }
         }
 
-        if(mapObj.id){
-            let trs = mapObj.id.querySelectorAll('tbody tr');
-            if( mapObj.max == 0  || mapObj.max > trs.length){
-                mapObj.max = trs.length;
-            }
-            if(mapObj.min > mapObj.max){
-                mapObj.min =mapObj.max;
-            }
+        if(mapObj.section){
+            var h1 =document.createElement("h1");
+            h1.innerText = mapObj.section;
+            document.querySelector('main ul').append(h1);
         }
     }
-    function fix(mapObj){
-         if(mapObj.id){
-             mapObj.id = mapObj.id.querySelectorAll('tbody tr');
-             mapObj.id.forEach(function (e,i) {
-                 if( i < parseInt(mapObj.min) ||  i > parseInt(mapObj.max)){
-                     e.remove();
-                 }
-             })
-         }
-    }
+
 }
 
