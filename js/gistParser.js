@@ -1,9 +1,5 @@
-if(typeof(mapData) == 'undefined'){
-    let mapData  = scriptParsing();
-} else {
-    mapData  = scriptParsing();
-}
 window.addEventListener('DOMContentLoaded', function(){
+   let mapData  = scriptParsing();
     gistFix(mapData);
 });
 
