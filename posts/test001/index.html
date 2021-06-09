@@ -355,10 +355,10 @@ layouts/partials/share.html 아래 넣어 준다.
 <li>만약 gist 내용 일부 표출 되는 걸 원하는 사람이 있다면, 별도의 shortcodes 내 html를 작성해야 한다.
 <ul>
 <li>layouts 폴더 아래 shortcodes 생성 후 gister.html 란 파일을 생성 [이름은 알아서]
-gister.html 내용은 아래 같이 작성 했다.</li>
-<li><span>&lt;div&gt; id=&#39;{{.Get 1}}&#39; data-parse=&#39;{{.Get 2}}&#39;&gt;&lt;script src=&#39;https://gist.github.com/{{.Get 0}}/{{.Get 1}}.js&#39;&gt;&lt;/script&gt;&lt;script src=&#39;https://choquality.github.io/js/gistParser.js?id={{.Get 1}}&amp;min={{.Get 2}}&amp;max={{.Get 3}}&#39;&gt;&lt;/script&gt;&lt;/div&gt;</span>
-
-우선 동작은 원하는 gist 내용을 html에 넣고 그후 아래 gistParser.js를 불러 해당 gist 내용의 일부를 잘라 표현 하게 했다. <br>
+gister.html 내용은 아래 같이 작성 했다.
+<span>&lt;div&gt; id=&#39;{{.Get 1}}&#39; data-parse=&#39;{{.Get 2}}&#39;&gt;&lt;script src=&#39;https://gist.github.com/{{.Get 0}}/{{.Get 1}}.js&#39;&gt;&lt;/script&gt;&lt;script src=&#39;https://choquality.github.io/js/gistParser.js?id={{.Get 1}}&amp;min={{.Get 2}}&amp;max={{.Get 3}}&#39;&gt;&lt;/script&gt;&lt;/div&gt;</span>
+</li>
+<li>우선 동작은 원하는 gist 내용을 html에 넣고 그후 아래 gistParser.js를 불러 해당 gist 내용의 일부를 잘라 표현 하게 했다. <br>
 [js 동작은 제대로 검증을 안함, 적당히 돌아가는듯]
 <div id="21ab82646e4786dda4c9c9752b576002" data-parse="0">
     <script src="https://gist.github.com/choquality/21ab82646e4786dda4c9c9752b576002.js"></script>
