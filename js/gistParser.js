@@ -3,15 +3,14 @@
     mapData = [];
 }
 mapData.push(scriptParsing());*/
-window.addEventListener('onload', function (){
+window.addEventListener('load', event);
+window.onload = function () {};
+
+function event(){
     let map =scriptParsing();
-    gistFix(map)
-});
-/*window.onload = function () {
-    mapData.forEach( function (map) {
-        gistFix(map);
-    });
-};*/
+    gistFix(map);
+}
+
 
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
