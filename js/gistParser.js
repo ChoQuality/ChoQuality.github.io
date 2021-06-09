@@ -3,11 +3,12 @@ if(typeof(mapData) =='undefined'){
     mapData = [];
 }
 mapData.push(scriptParsing());
-window.addEventListener('DOMContentLoaded', function(){
+
+window.onload = function () {
     mapData.forEach( function (map) {
         gistFix(map);
     });
-});
+};
 
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
