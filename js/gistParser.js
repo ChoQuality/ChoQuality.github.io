@@ -1,5 +1,9 @@
+if(typeof(mapData) == 'undefined'){
+    let mapData  = scriptParsing();
+} else {
+    mapData  = scriptParsing();
+}
 
-let mapData  = scriptParsing();
 window.onload = function () {
     gistFix(mapData);
 };
