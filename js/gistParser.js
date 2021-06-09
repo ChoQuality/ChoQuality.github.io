@@ -1,4 +1,4 @@
-window.addEventListener('load', gistFix(scriptParsing()));
+gistFix(scriptParsing());
 
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
