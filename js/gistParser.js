@@ -3,10 +3,10 @@ if(typeof(mapData) == 'undefined'){
 } else {
     mapData  = scriptParsing();
 }
-
-window.onload = function () {
+window.addEventListener('DOMContentLoaded', function(){
     gistFix(mapData);
-};
+});
+
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
