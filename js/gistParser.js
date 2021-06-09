@@ -55,4 +55,6 @@ gistFix = function (mapData) {
     }
 }
 
-window.addEventListener('DOMContentLoaded',gistFix(scriptParsing));
+window.addEventListener('DOMContentLoaded',function (){
+    gistFix(scriptParsing);
+});
