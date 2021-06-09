@@ -15,7 +15,7 @@ scriptParsing = function (){
     return map;
 }
 
-gistFix = function (mapData) {
+function gistFix(mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(mapData,this.mapObj);
     fix(this.mapObj);
