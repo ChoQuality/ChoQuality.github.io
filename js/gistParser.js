@@ -1,5 +1,8 @@
+window.addEventListener('DOMContentLoaded',function (){
+    gistFix(scriptParsing());
+});
 
-scriptParsing = (function (){
+scriptParsing = function (){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
         .replace(/[^\?]+\?/,'')
@@ -11,7 +14,7 @@ scriptParsing = (function (){
         map.set(query[0],query[1]);
     }
     return map;
-});
+};
 
 gistFix = function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
@@ -55,6 +58,3 @@ gistFix = function (mapData) {
     }
 }
 
-window.addEventListener('DOMContentLoaded',function (){
-    gistFix(scriptParsing);
-});
