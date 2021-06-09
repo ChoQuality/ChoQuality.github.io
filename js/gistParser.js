@@ -51,5 +51,4 @@ gistFix = function (mapData) {
     }
     return map;
 });
-window.addEventListener('DOMContentLoaded',gistFix);
 
