@@ -15,7 +15,7 @@
 <meta itemprop="name" content="Hugo &#43; Github">
 <meta itemprop="description" content="Github 페이지를 만들어 보자"><meta itemprop="datePublished" content="2021-06-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="418">
+<meta itemprop="wordCount" content="419">
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
@@ -259,7 +259,7 @@
 </li>
 <li>blog Repository = brew 로 생성된 폴더 전체를 저장할 곳</li>
 <li>ChoQuality.github.io Repository = 웹사이트 표출 내용 저장할 곳</li>
-<li>blog-comment Repository = 각 블로그 내용별 커멘트 저장할</li>
+<li>blog-comment Repository = 각 블로그 내용별 커멘트 저장할 곳</li>
 </ul>
 </li>
 <li>
@@ -272,16 +272,16 @@
 <li>
 <p>새로운 글을 등록 후 git push 해주자</p>
 <ul>
-<li>(hugo new posts/test.md)</li>
-<li>(hugo -D)</li>
-<li>(cd public)</li>
-<li>(git add .)</li>
-<li>(git commit -m &ldquo;msg&rdquo;)</li>
-<li>(git push origin master)</li>
-<li>(cd ..)</li>
-<li>(git add .)</li>
-<li>(git commit -m &ldquo;msg&rdquo;)</li>
-<li>(git push origin master)</li>
+<li>hugo new posts/test.md</li>
+<li>hugo -D</li>
+<li>cd public</li>
+<li>git add .</li>
+<li>git commit -m &ldquo;msg&rdquo;</li>
+<li>git push origin master</li>
+<li>cd ..</li>
+<li>git add .</li>
+<li>git commit -m &ldquo;msg&rdquo;</li>
+<li>git push origin master</li>
 <li>==========================</li>
 <li>위 내용을 귀찮게 다 쓰는게 싫어서 아래 같이 해버림. <a href="https://ryan-han.com/post/etc/creating_static_blog/">다른 사람 블로그 내용을 넣었다.</a></li>
 <li>[touch deploy.sh]
