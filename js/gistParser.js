@@ -1,5 +1,3 @@
-window.addEventListener('DOMContentLoaded',gistFix);
-
 gistFix = function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(typeof (mapData) == 'function'? mapData():mapData,this.mapObj);
@@ -53,4 +51,5 @@ gistFix = function (mapData) {
     }
     return map;
 });
+window.addEventListener('DOMContentLoaded',gistFix);
 
