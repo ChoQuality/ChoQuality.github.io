@@ -3,11 +3,10 @@
     mapData = [];
 }
 mapData.push(scriptParsing());*/
-window.addEventListener('load', event);
+window.addEventListener('load', event(scriptParsing()));
 window.onload = function () {};
 
-function event(){
-    let map =scriptParsing();
+function event(map){
     gistFix(map);
 }
 
