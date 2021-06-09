@@ -1,4 +1,4 @@
-gistFix = function (mapData) {
+!function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(typeof (mapData) == 'function'? mapData():mapData,this.mapObj);
     fix(this.mapObj);
