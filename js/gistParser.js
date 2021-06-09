@@ -1,6 +1,12 @@
+let mapData;
+if(typeof(mapData) =='undefined'){
+    mapData = [];
+}
+mapData.push(scriptParsing());
 window.addEventListener('DOMContentLoaded', function(){
-   let mapData  = scriptParsing();
-    gistFix(mapData);
+    mapData.forEach( function (map) {
+        gistFix(map);
+    });
 });
 
 function scriptParsing(){
