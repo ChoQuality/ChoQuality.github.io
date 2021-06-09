@@ -1,4 +1,4 @@
-!function (mapData) {
+(function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(typeof (mapData) == 'function'? mapData():mapData,this.mapObj);
     fix(this.mapObj);
@@ -38,7 +38,7 @@
              })
          }
     }
-}(function scriptParsing(){
+}).call(this, function scriptParsing(){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
         .replace(/[^\?]+\?/,'')
