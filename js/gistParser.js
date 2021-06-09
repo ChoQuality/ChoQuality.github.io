@@ -1,14 +1,14 @@
 
-if(typeof(mapData) =='undefined'){
+/*if(typeof(mapData) =='undefined'){
     mapData = [];
 }
-mapData.push(scriptParsing());
-
-window.onload = function () {
+mapData.push(scriptParsing());*/
+window.addEventListener('load', function (){gistFix(scriptParsing())});
+/*window.onload = function () {
     mapData.forEach( function (map) {
         gistFix(map);
     });
-};
+};*/
 
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
