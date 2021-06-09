@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://choquality.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>생각? 001</title>
-      <link>https://choquality.github.io/about/test001/</link>
+      <link>https://choquality.github.io/about/about000001/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://choquality.github.io/about/test001/</guid>
+      <guid>https://choquality.github.io/about/about000001/</guid>
       <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.</description>
     </item>
     
