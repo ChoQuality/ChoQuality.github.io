@@ -1,5 +1,3 @@
-window.addEventListener('DOMContentLoaded',gistFix(scriptParsing));
-
 
 scriptParsing = (function (){
     var script = document.getElementsByTagName('script');
@@ -15,7 +13,7 @@ scriptParsing = (function (){
     return map;
 });
 
-function gistFix(mapData) {
+gistFix = function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(mapData,this.mapObj);
     fix(this.mapObj);
@@ -57,3 +55,4 @@ function gistFix(mapData) {
     }
 }
 
+window.addEventListener('DOMContentLoaded',gistFix(scriptParsing));
