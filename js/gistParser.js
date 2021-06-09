@@ -3,12 +3,8 @@
     mapData = [];
 }
 mapData.push(scriptParsing());*/
-window.addEventListener('load', event(scriptParsing()));
-window.onload = function () {};
-
-function event(map){
-    gistFix(map);
-}
+window.addEventListener('load', gistFix(scriptParsing()));
+/*window.onload = function () {};*/
 
 
 function scriptParsing(){
