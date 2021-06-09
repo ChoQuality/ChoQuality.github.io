@@ -1,4 +1,4 @@
-let mapData;
+
 if(typeof(mapData) =='undefined'){
     mapData = [];
 }
