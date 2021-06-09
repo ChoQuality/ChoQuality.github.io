@@ -1,11 +1,4 @@
-
-/*if(typeof(mapData) =='undefined'){
-    mapData = [];
-}
-mapData.push(scriptParsing());*/
 window.addEventListener('load', gistFix(scriptParsing()));
-/*window.onload = function () {};*/
-
 
 function scriptParsing(){
     var script = document.getElementsByTagName('script');
