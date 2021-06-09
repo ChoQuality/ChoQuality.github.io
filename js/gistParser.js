@@ -1,4 +1,4 @@
-(function (mapData) {
+!function (mapData) {
     this.mapObj = {id:false,min:{},max:{}}
     parseMap(typeof (mapData) == 'function'? mapData():mapData,this.mapObj);
     fix(this.mapObj);
@@ -29,16 +29,16 @@
         }
     }
     function fix(mapObj){
-         if(mapObj.id){
-             mapObj.id = mapObj.id.querySelectorAll('tbody tr');
-             mapObj.id.forEach(function (e,i) {
-                 if( i < parseInt(mapObj.min) ||  i > parseInt(mapObj.max)){
-                     e.remove();
-                 }
-             })
-         }
+        if(mapObj.id){
+            mapObj.id = mapObj.id.querySelectorAll('tbody tr');
+            mapObj.id.forEach(function (e,i) {
+                if( i < parseInt(mapObj.min) ||  i > parseInt(mapObj.max)){
+                    e.remove();
+                }
+            })
+        }
     }
-}).call(this, function scriptParsing(){
+}(function scriptParsing(){
     var script = document.getElementsByTagName('script');
     script = script[script.length-1].src
         .replace(/[^\?]+\?/,'')
@@ -51,4 +51,3 @@
     }
     return map;
 });
-
